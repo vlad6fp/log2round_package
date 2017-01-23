@@ -4,9 +4,11 @@
 This is code for a custom activation function Log2round for Tensorflow. It takes tensor as input and outputs a tensor of the same size. Log2round doesn't change gradient during the backpropagation step. Log2round makes it easy to implement an approach analogous to and inspired by the one discussed in [https://arxiv.org/pdf/1602.02830v3.pdf](https://arxiv.org/pdf/1602.02830v3.pdf).
 ```
 log2round(x) = pow(2, n) * sign(x),
-where integer n minimizes | |x| - pow(2,n) |; n can be of any sign.
+where integer n minimizes | |x| - pow(2,n) |; n can be of any sign;
+n is bounded to be between -14 and +10.
 
 d(log2round(x))/dx = dx/dx = 1
+
 ```
 
 # Usage

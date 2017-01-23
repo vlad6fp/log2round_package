@@ -11,6 +11,8 @@ d(log2round(x))/dx = dx/dx = 1
 
 ```
 It's expected that n only takes values from a relatively narrow subset of integers when computed for all weights and activations of a neural network.
+# Ownership
+Relu and tensorflow math operations were used as a prototype for this code. That's why some portion of this code are written by the tensorflow contributors and I don't own it. 
 
 # Usage
 

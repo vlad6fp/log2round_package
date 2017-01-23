@@ -10,6 +10,7 @@ n is bounded to be between -14 and +10.
 d(log2round(x))/dx = dx/dx = 1
 
 ```
+It's expected that n only takes values from a relatively narrow subset integers when computed for all weights and activations of a neural network.
 
 # Usage
 

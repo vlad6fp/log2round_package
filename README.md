@@ -6,7 +6,7 @@ This is code for a custom activation function Log2round for Tensorflow. It takes
 log2round(x) = pow(2, n) * sign(x),
 where integer n minimizes | |x| - pow(2,n) |; n can be of any sign.
 
-d(log2round(x))/dx = 1
+d(log2round(x))/dx = dx/dx = 1
 ```
 
 # Usage

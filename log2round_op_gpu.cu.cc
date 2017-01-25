@@ -15,7 +15,7 @@ namespace tensorflow {
     
     // Definition of the GPU implementations declared in log2round_op.cc.
 #define DEFINE_GPU_KERNELS(T)                       \
-template struct functor::Relu<GPUDevice, T>;
+template struct functor::Log2round<GPUDevice, T>;
     
     TF_CALL_GPU_NUMBER_TYPES(DEFINE_GPU_KERNELS);
     

@@ -39,10 +39,10 @@ TF_CALL_REAL_NUMBER_TYPES(REGISTER_LOG2ROUND_KERNELS);
         
 #define DECLARE_GPU_SPEC(T)                                              \
 template <>                                                              \
-void Relu<GPUDevice, T>::operator()(                                     \
+void Log2round<GPUDevice, T>::operator()(                                     \
 const GPUDevice& d, typename TTypes<T>::ConstTensor features,            \
 typename TTypes<T>::Tensor activations);                                 \
-extern template struct Relu<GPUDevice, T>;
+extern template struct Log2round<GPUDevice, T>;
 
         TF_CALL_GPU_NUMBER_TYPES(DECLARE_GPU_SPEC);
     }  // namespace functor
@@ -50,8 +50,8 @@ extern template struct Relu<GPUDevice, T>;
     // Registration of the GPU implementations.
 #define REGISTER_GPU_KERNELS(type)                              \
 REGISTER_KERNEL_BUILDER(                                        \
-Name("Relu").Device(DEVICE_GPU).TypeConstraint<type>("T"),      \
-ReluOp<GPUDevice, type>);
+Name("Log2round").Device(DEVICE_GPU).TypeConstraint<type>("T"),      \
+Log2roundOp<GPUDevice, type>);
 
     TF_CALL_GPU_NUMBER_TYPES(REGISTER_GPU_KERNELS);
     
